@@ -9,5 +9,6 @@ resolvers += "spray" at "http://repo.spray.io/"
 libraryDependencies ++=  Seq(
                             "io.spray" %%  "spray-json" % "1.2.5",
                             "net.databinder.dispatch" %% "dispatch-core" % "0.11.0",
-                            "org.slf4j" % "slf4j-nop" % "1.6.4")
+                            "org.slf4j" % "slf4j-nop" % "1.6.4",
+                            "net.virtual-void" %%  "json-lenses" % "0.5.4")
     
