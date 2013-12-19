@@ -21,3 +21,4 @@ src_managed/
 project/boot/
 .history
 .cache
+src/test/scala/Main.scala

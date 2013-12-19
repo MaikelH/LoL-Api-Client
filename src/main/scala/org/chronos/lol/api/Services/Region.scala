@@ -5,5 +5,5 @@ package org.chronos.lol.api.Services
  */
 object Region extends Enumeration{
   type Region = Value
-  val NA, EUW, EUNE, TR, BR = Value
+  val na, euw, eune, tr, br = Value
 }

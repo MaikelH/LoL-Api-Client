@@ -5,6 +5,6 @@ import org.chronos.lol.api.models.Champion
 /**
  * Created by Maikel on 12/12/13.
  */
-class Champions(implicit key: ApiKey)  {
-  def GetChampion(id: Int, region: Region.Region): Future[Champion] = ???
+object ChampionService  {
+  def GetChampion(id: Int, region: Region.Region)(implicit key: ApiKey): Future[Champion] = ???
 }
