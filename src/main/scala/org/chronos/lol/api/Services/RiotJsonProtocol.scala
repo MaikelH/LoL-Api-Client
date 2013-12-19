@@ -15,7 +15,7 @@ object RiotJsonProtocol extends DefaultJsonProtocol {
       json.asJsObject.getFields("id", "name", "profileIconId", "summonerLevel", "revisionDate", "revisionDateStr")
       match {
         case Seq(JsNumber(id), JsString(name), JsNumber(iconId), JsNumber(level),
-                 JsNumber(revDate), JsString(revDateStr)) => new Summoner(id.intValue(), name, iconId.intValue(), new Timestamp(revDate.intValue()),
+                 JsNumber(revDate), JsString(revDateStr)) => new Summoner(id.intValue(), name, iconId.intValue(), new Timestamp(revDate.longValue()),
                                                                   revDateStr, level.intValue() )
         case _ => throw new DeserializationException("Summoner expected")
       }
