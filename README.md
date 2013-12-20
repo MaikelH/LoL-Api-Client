@@ -1,23 +1,20 @@
 LoL-Api-Client
-==============
+--------------
 
 Scala client for the RIOT games API.
 
-Dependencies
-------------
+### Dependencies
 
-    * spray-json 1.2.5,
-    * dispatch-core 0.11.0
-    * json-lenses 0.5.4
+* spray-json 1.2.5,
+* dispatch-core 0.11.0
+* json-lenses 0.5.4
 
-Features
------
+### Features
 
-    * All calls are async using futures
-    * No mutable state
+* All calls are async using futures
+* No mutable state
 
-Usage
------
+### Usage
 
 Under construction
 
