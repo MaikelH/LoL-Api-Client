@@ -7,7 +7,6 @@ import java.sql.Timestamp
  */
 case class Game(championId: Int,
                 createDate: Timestamp,
-                createDateStr: String,
                 gameId: Long,
                 gameMode: String,
                 gameType: String,
@@ -16,4 +15,11 @@ case class Game(championId: Int,
                 spell1: Int,
                 spell2: Int,
                 subType: String,
-                teamId: Int)
+                teamId: Int,
+                fellowPlayers: Seq[FellowPlayer],
+                statistics: Seq[Statistic])
+
+case class FellowPlayer(summonerId: Long, teamId: Int, championId: Int)
+
+case class Statistic(id: Int, name: String, value: Int)
+

@@ -15,7 +15,6 @@ import spray.json.lenses.JsonLenses._
 object SummonerService {
 
   def GetSummoner(region: Region, id: Int)(implicit key: ApiKey, ec: ExecutionContext): Future[Summoner] = {
-
       val urlString = "https://prod.api.pvp.net/api/lol/" + region.toString + "/v1.1/summoner/" + id + "?api_key=" + key.getKey()
       val reqUrl = url(urlString)
 
@@ -36,7 +35,7 @@ object SummonerService {
       case Nil => ""
     }
 
-    // Converted the return json to a Map[Int, String]
+    // Convert the return json to a Map[Int, String]
     // TODO: This is not very nicely done, see if can be done better
     def jsonToMap(json: JsValue): Map[Long, String] = {
       val AllNames = 'summoners / * / 'name
