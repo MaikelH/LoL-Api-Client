@@ -1,4 +1,4 @@
-package org.chronos.lol.api.models
+package org.chronos.lol.api.services.V1_1.models
 
 /**
  * Created by Maikel on 12/12/13

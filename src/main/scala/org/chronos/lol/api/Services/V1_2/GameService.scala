@@ -1,10 +1,11 @@
-package org.chronos.lol.api.Services
+package org.chronos.lol.api.services.V1_2
 
-import org.chronos.lol.api.models.{Summoner, Game}
 import scala.concurrent.{Future, ExecutionContext}
 import dispatch.{Http, as, url}
 import spray.json.JsonParser
-import RiotJsonProtocol._
+import org.chronos.lol.api.services.{ApiKey, Region}
+import org.chronos.lol.api.services.V1_2.protocol.GameServiceProtocol._
+import org.chronos.lol.api.services.V1_2.models.Game
 
 /**
  * Created by Maikel on 12/12/13.

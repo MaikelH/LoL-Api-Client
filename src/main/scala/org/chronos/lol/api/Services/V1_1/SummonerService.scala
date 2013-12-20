@@ -1,13 +1,13 @@
-package org.chronos.lol.api.Services
+package org.chronos.lol.api.services.V1_1
 
-import org.chronos.lol.api.Services.Region.Region
-import org.chronos.lol.api.models.Summoner
+import org.chronos.lol.api.services.Region.Region
 import scala.concurrent._
-import dispatch.{url, Http, host, as}
+import dispatch.{url, Http, as}
 import spray.json._
-import RiotJsonProtocol._
-import org.chronos.lol.api.models.Summoner
 import spray.json.lenses.JsonLenses._
+import org.chronos.lol.api.services.ApiKey
+import org.chronos.lol.api.services.V1_1.protocol.SummonerProtocol._
+import org.chronos.lol.api.services.V1_1.models.Summoner
 
 /**
  * Created by Maikel on 12/15/13

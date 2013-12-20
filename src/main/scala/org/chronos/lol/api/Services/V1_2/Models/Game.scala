@@ -1,4 +1,4 @@
-package org.chronos.lol.api.models
+package org.chronos.lol.api.services.V1_2.models
 
 import java.sql.Timestamp
 
