@@ -14,7 +14,7 @@ import org.chronos.lol.api.services.V1_2.models.Summoner
  */
 object SummonerService {
 
-  def GetSummoner(region: Region, id: Int)(implicit key: ApiKey, ec: ExecutionContext): Future[Summoner] = {
+  def GetSummoner(region: Region, id: Long)(implicit key: ApiKey, ec: ExecutionContext): Future[Summoner] = {
       val urlString = "https://prod.api.pvp.net/api/lol/" + region.toString + "/v1.2/summoner/" + id + "?api_key=" + key.getKey()
       val reqUrl = url(urlString)
 
