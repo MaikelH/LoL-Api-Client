@@ -34,11 +34,15 @@ object GameServiceProtocol extends DefaultJsonProtocol {
 
     def read(json: JsValue): Game = {
       val statisticLens = 'statistics / *
-      val fellowPlayerLens = 'fellowPlayers / *
 
       // Extract the statistics and fellowplayers
       val statistics = json.extract[Statistic](statisticLens)
-      val fellowPlayers = json.extract[FellowPlayer](fellowPlayerLens)
+
+      // Fellow players is not always there so make it a option
+      val fellowPlayers  = json.extract[JsValue]('fellowPlayers.?) match {
+        case Some(x) => Some(json.extract[FellowPlayer]('fellowPlayers / *))
+        case None => None
+      }
 
       Game(json.extract[Int]('championId),
         new Timestamp(json.extract[Long]('createDate)),
