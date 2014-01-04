@@ -2,7 +2,7 @@ package org.chronos.lol.api.services.V1_2
 
 import org.chronos.lol.api.services.{Region, ApiKey}
 import scala.concurrent.{Future, ExecutionContext}
-import org.chronos.lol.api.services.V1_2.models.RankedStats
+import org.chronos.lol.api.services.V1_2.models.{PlayerStatsList, RankedStats}
 import dispatch.{Http, as, url}
 import spray.json.JsonParser
 import org.chronos.lol.api.services.V1_2.protocol.StatsProtocol._
@@ -21,5 +21,11 @@ object StatsService {
     for(response <- Http(reqUrl OK as.String)) yield JsonParser(response).convertTo[RankedStats]
   }
 
-  def GetSummaryStats(region: Region.Region, SummonerId: Long)(implicit key: ApiKey, ec: ExecutionContext) ={}
+  def GetSummaryStats(region: Region.Region, SummonerId: Long)(implicit key: ApiKey, ec: ExecutionContext) = {
+    val urlString = "https://prod.api.pvp.net/api/lol/" + region.toString + "/v1.2/stats/by-summoner/" +
+    SummonerId + "/summary?api_key=" + key.getKey()
+
+    val reqUrl = url(urlString)
+
+    for(response <- Http(reqUrl OK as.String)) yield JsonParser(response).convertTo[PlayerStatsList]}
 }

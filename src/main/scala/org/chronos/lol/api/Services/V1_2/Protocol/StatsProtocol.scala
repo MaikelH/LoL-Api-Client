@@ -1,7 +1,7 @@
 package org.chronos.lol.api.services.V1_2.protocol
 
 import spray.json.{JsValue, RootJsonFormat}
-import org.chronos.lol.api.services.V1_2.models.{RankedStats, ChampionStats}
+import org.chronos.lol.api.services.V1_2.models.{PlayerStatsList, PlayerStats, RankedStats, ChampionStats}
 import spray.json.lenses.JsonLenses._
 import java.sql.Timestamp
 import spray.json.DefaultJsonProtocol._
@@ -33,6 +33,27 @@ object StatsProtocol {
       RankedStats(json.extract[Long]('summonerId),
                   new Timestamp(json.extract[Long]('modifyDate)),
                   stats)
+    }
+  }
+
+  implicit object PlayerStatsFormat extends  RootJsonFormat[PlayerStats] {
+    def write(obj: PlayerStats): JsValue = ???
+
+    def read(json: JsValue): PlayerStats = {
+      PlayerStats(json.extract[Int]('losses),
+                  new Timestamp(json.extract[Int]('modifyDate)),
+                  json.extract[String]('playerStatSummaryType),
+                  json.extract[Int]('wins),
+                  json.extract[Map[String, Int]]('aggregatedStats))
+    }
+  }
+
+  implicit object PlayerStatsListFormat extends RootJsonFormat[PlayerStatsList] {
+    def write(obj: PlayerStatsList): JsValue = ???
+
+    def read(json: JsValue): PlayerStatsList = {
+      PlayerStatsList(json.extract[Long]('summonerId),
+                      json.extract[PlayerStats]('playerStatSummaries / *))
     }
   }
 }
