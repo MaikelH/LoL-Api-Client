@@ -1,6 +1,6 @@
 name := "LoL-Api-Client"
 
-version := "0.5"
+version := "0.6-SNAPSHOT"
 
 scalaVersion := "2.10.3"
 

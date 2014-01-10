@@ -40,7 +40,7 @@ object StatsProtocol {
     def write(obj: PlayerStats): JsValue = ???
 
     def read(json: JsValue): PlayerStats = {
-      PlayerStats(json.extract[Int]('losses),
+      PlayerStats(json.extract[Int]('losses.?),
                   new Timestamp(json.extract[Int]('modifyDate)),
                   json.extract[String]('playerStatSummaryType),
                   json.extract[Int]('wins),

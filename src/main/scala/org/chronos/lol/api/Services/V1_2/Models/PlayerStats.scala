@@ -8,7 +8,7 @@ import java.sql.Timestamp
 case class PlayerStatsList(summonerId: Long,
                            summaries: Seq[PlayerStats])
 
-case class PlayerStats(losses: Int,
+case class PlayerStats(losses: Option[Int],
                        modififyDate: Timestamp,
                        statSummaryType: String,
                        wins: Int,
