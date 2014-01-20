@@ -3,6 +3,9 @@ LoL-Api-Client
 
 Scala client for the RIOT games API.
 
+### Build status
+[![Build Status](https://travis-ci.org/MaikelH/LoL-Api-Client.png?branch=master)](https://travis-ci.org/MaikelH/LoL-Api-Client)
+
 ### Dependencies
 
 * spray-json 1.2.5,
