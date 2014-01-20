@@ -10,5 +10,5 @@ case class RankedStats(summonerId: Long,
                        stats: Seq[ChampionStats])
 
 case class ChampionStats(id: Long,
-                         name: String,
+                         name: Option[String],
                          stats: Map[String, Int])

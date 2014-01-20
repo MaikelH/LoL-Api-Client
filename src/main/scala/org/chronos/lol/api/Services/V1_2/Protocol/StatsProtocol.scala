@@ -18,7 +18,7 @@ object StatsProtocol {
       val stats = json.extract[Map[String, Int]]('stats)
 
       ChampionStats(json.extract[Int]('id),
-        json.extract[String]('name),
+        json.extract[String]('name.?),
         stats)
     }
   }
